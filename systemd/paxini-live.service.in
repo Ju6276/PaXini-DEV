@@ -1,0 +1,14 @@
+[Unit]
+Description=PaXini local sensor visualization
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=@PROJECT_DIR@
+ExecStart="@EXEC_PROJECT_DIR@/.venv/bin/python" "@EXEC_PROJECT_DIR@/server.py"
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target
